@@ -1,13 +1,10 @@
 ﻿using DVD.Extensions;
 using RG35XX.Core.Drawing;
 using RG35XX.Core.Extensions;
-using RG35XX.Core.Fonts;
 using RG35XX.Core.GamePads;
 using RG35XX.Libraries;
 using SixLabors.ImageSharp;
-using System.Diagnostics.Eventing.Reader;
 using System.Reflection;
-using System.Text.Json;
 using Color = RG35XX.Core.Drawing.Color;
 
 namespace DVD
@@ -47,7 +44,7 @@ namespace DVD
 
             _gamePadReader.ClearBuffer();
 
-            do 
+            do
             {
                 GamepadKey key = _gamePadReader.WaitForInput();
 
@@ -61,10 +58,12 @@ namespace DVD
                     {
                         _delayMs *= 2;
                     }
-                } else if ( key is GamepadKey.R1_DOWN)
+                }
+                else if (key is GamepadKey.R1_DOWN)
                 {
                     _delayMs /= 2;
-                } else if (key is GamepadKey.MENU_DOWN or GamepadKey.B_DOWN)
+                }
+                else if (key is GamepadKey.MENU_DOWN or GamepadKey.B_DOWN)
                 {
                     break;
                 }
@@ -77,8 +76,8 @@ namespace DVD
 
         private void Bounce()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "DVD.DVD.png";
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "DVD.DVD.png";
 
             using Stream stream = assembly.GetManifestResourceStream(resourceName);
 

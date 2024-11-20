@@ -1,6 +1,4 @@
-﻿using DVD;
-
-namespace RG35XX.DVD
+﻿namespace DVD
 {
     internal class Program
     {
