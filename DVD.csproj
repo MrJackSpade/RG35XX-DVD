@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="D:\Git\RG35XX.NET\RG35XX.Libraries\RG35XX.Libraries.csproj" />
+    <ProjectReference Include="..\RG35XX.NET\RG35XX.Libraries\RG35XX.Libraries.csproj" />
   </ItemGroup>
 
 </Project>
