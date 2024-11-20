@@ -85,7 +85,7 @@ namespace DVD
 
             Bitmap toDraw = new(image.Width + 2, image.Height + 2, Color.Black);
 
-            toDraw.Draw(image.ToBitmap(), 1, 1);
+            toDraw.DrawBitmap(image.ToBitmap(), 1, 1);
 
             int x = 0;
             int y = 0;
